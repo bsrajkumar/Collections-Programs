@@ -63,7 +63,7 @@ void main() {
             .mapToObj(c -> (char)c)
             .collect(Collectors.groupingBy(
                     Function.identity(),
-                    HashMap::new,
+                    LinkedHashMap::new,
                     Collectors.counting()))
                     .entrySet()
                     .stream()
