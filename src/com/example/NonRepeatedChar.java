@@ -5,11 +5,13 @@ void main() {
     // to see how IntelliJ IDEA suggests fixing it.
     IO.println(String.format("Hello and welcome!"));
 
-    String str = new String("aabbcddeefggah");
+    // Using HashMap
+
+    String inputString = new String("xaabbcddeefggah");
     Map<String, Integer> strCount = new HashMap<String, Integer>();
 
-    for(int i = 0; i < str.length(); i++){
-        String s = String.valueOf(str.charAt(i));
+    for(int i = 0; i < inputString.length(); i++){
+        String s = String.valueOf(inputString.charAt(i));
         if(strCount.get(s) == null){
             strCount.put(s, 1);
         } else{
@@ -33,4 +35,35 @@ void main() {
             IO.println("Non Repeated Char - " + key);
         }
     }
+
+    // Print First Non Repeated Char
+    for(char ch: inputString.toCharArray()){
+
+        if(strCount.get(String.valueOf(ch)) == 1){
+            IO.println("First Non Repeated Char - " + String.valueOf(ch));
+            break;
+        }
+    }
+
+    //  Using Linked HashMap
+    Map<Character, Integer> strCountMap = new LinkedHashMap<>();
+
+    for(char ch : inputString.toCharArray()){
+        strCountMap.put(ch, strCountMap.getOrDefault(ch, 0) + 1);
+    }
+
+    for(Map.Entry<Character, Integer> entry : strCountMap.entrySet()){
+        if(entry.getValue() == 1){
+            IO.println("Non Repeated char - " + entry.getKey());
+        }
+    }
+
+
+
+
+
+
+
+
+
 }
