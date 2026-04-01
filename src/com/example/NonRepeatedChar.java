@@ -58,6 +58,23 @@ void main() {
         }
     }
 
+    List<Character> nonRepeatedChars =
+            inputString.chars()
+            .mapToObj(c -> (char)c)
+            .collect(Collectors.groupingBy(
+                    Function.identity(),
+                    HashMap::new,
+                    Collectors.counting()))
+                    .entrySet()
+                    .stream()
+                    .filter(e -> e.getValue() == 1)
+                    .map(Map.Entry::getKey)
+                    .toList();
+
+    System.out.println(nonRepeatedChars);
+
+
+
 
 
 
