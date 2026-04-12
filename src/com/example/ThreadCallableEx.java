@@ -11,7 +11,7 @@ class MyTask implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         IO.println("Task running in thread " + Thread.currentThread().getName());
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         return 100;
     }
 
