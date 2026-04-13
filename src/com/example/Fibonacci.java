@@ -22,6 +22,8 @@ public class Fibonacci {
                 .limit(limit)
                 .map(n -> n[0])
                 .collect(Collectors.toList());
+                // .forEach(System.out::println); // This will print without instead of collecting to List
+
 
         System.out.print(fibSeries);
     }
