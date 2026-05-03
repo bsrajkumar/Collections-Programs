@@ -29,6 +29,7 @@ public class GroupByDepartment {
                         ));
         System.out.println(empNamesByDept);
 
+
         Map<String, Long> deptCount =
                 employees.stream()
                         .collect(Collectors.groupingBy(
